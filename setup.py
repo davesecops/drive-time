@@ -6,8 +6,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="drivetime",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="David Langlands",
+    author_email="david@langlands.com",
     description="Get live driving ETAs with traffic information",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,7 +26,8 @@ setup(
     python_requires=">=3.8",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
+    license="Apache-2.0",
 )
