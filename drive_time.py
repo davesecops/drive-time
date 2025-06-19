@@ -37,7 +37,7 @@ load_dotenv()
 try:
     gmaps = get_gmaps_client()
     # Test the client with a simple request
-    gmaps.geocode('Test', timeout=2)
+    gmaps.geocode('Test')
 except Exception as e:
     print(f"Error: Failed to connect to Google Maps API: {str(e)}")
     print("Please check your internet connection and API key permissions.")
