@@ -17,9 +17,18 @@ A command-line tool to get live driving ETAs with traffic information using Goog
 
 ## Installation
 
+### Option 1: Install from GitHub (Recommended)
+
+1. Install directly from GitHub:
+   ```bash
+   pip install git+https://github.com/davesecops/drive-time.git
+   ```
+
+### Option 2: Local Development Installation
+
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/davesecops/drive-time.git
    cd drive-time
    ```
 
@@ -29,15 +38,28 @@ A command-line tool to get live driving ETAs with traffic information using Goog
    conda activate drive-time
    ```
 
-3. Install the required packages:
+3. Install in development mode (editable):
    ```bash
-   pip install -r requirements.txt
+   pip install -e .
+   ```
+   
+   Or install globally:
+   ```bash
+   pip install .
    ```
 
-4. Create a `.env` file in the project directory and add your Google Maps API key:
-   ```
-   GOOGLE_MAPS_API_KEY=your_api_key_here
-   ```
+### API Key Setup
+
+Set up your Google Maps API key (required):
+```bash
+# For global installation
+export GOOGLE_MAPS_API_KEY='your_api_key_here'
+
+# For development, create a .env file
+echo 'GOOGLE_MAPS_API_KEY=your_api_key_here' > .env
+```
+
+> **Note:** You'll need a valid Google Maps API key with the Directions API enabled.
 
 ## Usage
 
