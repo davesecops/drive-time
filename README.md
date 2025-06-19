@@ -1,12 +1,13 @@
-# Drive Time Calculator
+# Drive Time
 
-A Python script that calculates driving time between two locations using Google Maps API, with support for traffic conditions and future departure times.
+A command-line tool to get live driving ETAs with traffic information using Google Maps API.
 
 ## Features
 
-- Get current driving time estimates with traffic
-- Check estimated travel time for future departure times
-- Save frequently used routes as defaults
+- Get current driving time with traffic
+- Save default origin and destination addresses
+- Check future ETAs based on departure time
+- Clean, formatted output with distance and average speed
 - Simple command-line interface
 
 ## Prerequisites

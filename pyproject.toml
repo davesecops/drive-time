@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drivetime"
+version = "0.1.0"
+authors = [
+    {name = "David Langlands", email = "david@langlands.com"},
+]
+description = "Get live driving ETAs with traffic information"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "googlemaps==4.10.0",
+    "python-dotenv==1.1.0"
+]
+
+[project.scripts]
+drivetime = "drive_time:main"

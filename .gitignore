@@ -1,14 +1,15 @@
 # Environment variables
 .env
 
-# Rope project files
-.ropeproject/
-
-# Python cache and virtual environment
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+.pytest_cache/
+.mypy_cache/
+
+# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -31,13 +32,13 @@ venv/
 env/
 ENV/
 
-# IDE specific files
+# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# Local development
+# System
 .DS_Store
 
 # Logs
@@ -47,4 +48,50 @@ ENV/
 local_settings.py
 
 # Jupyter Notebook
-.ipynb_checkpoints
+.ipynb_checkpoints/
+
+# Project specific
+.coverage
+htmlcov/
+
+# Rope project files
+.ropeproject/
+
+# Build outputs
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+build/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx
+docs/_build/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
