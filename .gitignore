@@ -1,6 +1,9 @@
 # Environment variables
 .env
 
+# Rope project files
+.ropeproject/
+
 # Python cache and virtual environment
 __pycache__/
 *.py[cod]
