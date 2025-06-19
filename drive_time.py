@@ -3,6 +3,7 @@
 drive_time.py – prints live driving ETA, and (optionally) ETA n-minutes ahead.
 """
 import os
+import sys
 import time
 import json
 import datetime
@@ -16,8 +17,31 @@ import googlemaps
 CONFIG_DIR = Path.home() / '.config' / 'drive_time'
 DEFAULTS_FILE = CONFIG_DIR / 'defaults.json'
 
+def get_gmaps_client() -> googlemaps.Client:
+    """Initialize and return Google Maps client with API key validation."""
+    api_key = os.getenv("GOOGLE_MAPS_API_KEY")
+    if not api_key:
+        print("Error: GOOGLE_MAPS_API_KEY environment variable not found.")
+        print("Please set it in your .env file or environment variables.")
+        print("You can get an API key from: https://developers.google.com/maps/documentation/directions/get-api-key")
+        sys.exit(1)
+    
+    try:
+        return googlemaps.Client(key=api_key)
+    except Exception as e:
+        print(f"Error initializing Google Maps client: {str(e)}")
+        print("Please check your API key and ensure it's valid.")
+        sys.exit(1)
+
 load_dotenv()
-gmaps: googlemaps.Client = googlemaps.Client(key=os.getenv("GOOGLE_MAPS_API_KEY"))
+try:
+    gmaps = get_gmaps_client()
+    # Test the client with a simple request
+    gmaps.geocode('Test', timeout=2)
+except Exception as e:
+    print(f"Error: Failed to connect to Google Maps API: {str(e)}")
+    print("Please check your internet connection and API key permissions.")
+    sys.exit(1)
 
 def eta_minutes(origin: str, destination: str, depart_epoch: int) -> tuple[float, str, str, str]:
     """
